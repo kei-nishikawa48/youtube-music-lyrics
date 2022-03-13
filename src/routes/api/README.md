@@ -2,6 +2,6 @@
 
 svelte-kitではtsファイルもしくはjsファイルにすると自動的にバックエンドで実行されます
 
- front -> api -> youtubeAPI or 歌詞検索API
+ front -> apiRoute -> youtubeAPI or 歌詞検索API
 
-という流れでデータの行き来をするのですが、このディレクトリはapiの部分になります。
+という流れでデータの行き来をするのですが、このディレクトリはapiRouteの部分になります。
