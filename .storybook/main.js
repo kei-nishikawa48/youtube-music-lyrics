@@ -1,26 +1,22 @@
-const path = require('path');
 module.exports = {
+	core: {
+		builder: 'storybook-builder-vite'
+	},
 	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|svelte)'],
 	addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
 	framework: '@storybook/svelte',
 	svelteOptions: {
 		preprocess: import('../svelte.config.js').preprocess
 	},
-	// webpackFinal: async (config) => {
-	// 	config.module.rules.push({
-	// 		test: [/\.stories\.js$/, /index\.js$/],
-	// 		use: [require.resolve('@storybook/source-loader')],
-	// 		include: [path.resolve(__dirname, '../src')],
-	// 		enforce: 'pre'
-	// 	});
-	// 	config.resolve.alias = {
-	// 		...config.resolve.alias,
-	// 		$lib: path.resolve(__dirname, '../src/lib'),
-	// 		$components: path.resolve(__dirname, '../src/lib/components')
-	// 	};
-	// 	return config;
-	// },
-	core: {
-		builder: 'storybook-builder-vite'
+	async viteFinal(config, { configType }) {
+		const { resolve } = await import('path');
+		// customize the Vite config here
+		config.resolve.alias = {
+			$lib: resolve('src/lib'),
+			$components: resolve('src/lib/components'),
+			$app: resolve('node_modules/@sveltejs/kit/assets/runtime/app')
+		};
+		// return the customized config
+		return config;
 	}
 };
