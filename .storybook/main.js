@@ -14,7 +14,7 @@ module.exports = {
 		config.resolve.alias = {
 			$lib: resolve('src/lib'),
 			$components: resolve('src/lib/components'),
-			$app: path.resolve('.svelte-kit/runtime/app')
+			$app: resolve('.svelte-kit/runtime/app')
 		};
 		// return the customized config
 		return config;
