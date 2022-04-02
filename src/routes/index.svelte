@@ -1,23 +1,29 @@
 <script>
-    import SearchForm from '../lib/components/SearchForm.svelte'
-    import CheckBox from '../lib/components/CheckBox.svelte'
+	import SearchForm from '../lib/components/SearchForm.svelte';
+	import CheckBox from '../lib/components/CheckBox.svelte';
 
-    let searchWord = '';
-    let searchYouTube = false;
-    let searchLyrics = false;
-    
-    const handleSubmit = () => {
-        console.log(searchWord)
-        console.log(searchYouTube)
-        console.log(searchLyrics)
-    }
+	let searchWord = '';
+	let searchYouTube = false;
+	let searchLyrics = false;
 
+	const handleSubmit = () => {
+		console.log(searchWord);
+		console.log(searchYouTube);
+		console.log(searchLyrics);
+	};
+
+	import LyricsList from '../lib/components/LyricsList.svelte';
 </script>
 
 <h1>Welcome to SvelteKit</h1>
 
 <form on:submit|preventDefault={handleSubmit}>
-    <SearchForm bind:value={searchWord} />
-    <CheckBox bind:checked={searchYouTube} />YouTube
-    <CheckBox bind:checked={searchLyrics} />歌詞検索
+	<SearchForm bind:value={searchWord} />
+	<CheckBox bind:checked={searchYouTube} />YouTube
+	<CheckBox bind:checked={searchLyrics} />歌詞検索
 </form>
+
+<div class="flex flex-row">
+	<div>youtube</div>
+	<LyricsList />
+</div>
