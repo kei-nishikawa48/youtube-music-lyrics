@@ -1,21 +1,21 @@
 <script>
-  import "../styles/tailwind.css";
+    import SearchForm from '../lib/components/SearchForm.svelte'
+    import CheckBox from '../lib/components/CheckBox.svelte'
+    let searchWord = '';
+    let searchYouTube = false;
+    let searchLyrics = false;
+    
+    const handleSubmit = () => {
+        console.log(searchWord)
+        console.log(searchYouTube)
+        console.log(searchLyrics)
+    }
 </script>
 
+<h1>Welcome to SvelteKit</h1>
 
-<div class="flex flex-col justify-center align-middle p-4 mb-12">
-  <h1 class="text-4xl text-center text-purple-700 font-light">Welcome to SvelteKit</h1>
-
-  <p class="text-center mb-4 mt-2">
-    Visit
-    <a
-      class="text-purple-400 hover:text-pink-700 hover:underline"
-      href="https://kit.svelte.dev"
-    >
-      kit.svelte.dev
-    </a>
-    to read the documentation.
-  </p>
-</div>
-
-
+<form on:submit|preventDefault={handleSubmit}>
+    <SearchForm bind:value={searchWord} />
+    <CheckBox bind:checked={searchYouTube} />YouTube
+    <CheckBox bind:checked={searchLyrics} />歌詞検索
+</form>
