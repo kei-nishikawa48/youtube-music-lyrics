@@ -12,7 +12,7 @@
 		console.log(searchLyrics);
 	};
 
-	import LyricsList from '../lib/components/LyricsList.svelte';
+	import LyricsList from '../lib/components/organisms/LyricsList.svelte';
 </script>
 
 <h1>Welcome to SvelteKit</h1>

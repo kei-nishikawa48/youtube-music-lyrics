@@ -1,3 +1,4 @@
+const preprocess = require('svelte-preprocess');
 module.exports = {
 	core: {
 		builder: 'storybook-builder-vite'
@@ -6,7 +7,7 @@ module.exports = {
 	addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
 	framework: '@storybook/svelte',
 	svelteOptions: {
-		preprocess: import('../svelte.config.js').preprocess
+		preprocess: preprocess({ postcss: true, typescript: true })
 	},
 	async viteFinal(config, { configType }) {
 		const { resolve } = await import('path');
