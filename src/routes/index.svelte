@@ -1,7 +1,6 @@
 <script>
 	import SearchForm from '../lib/components/SearchForm.svelte';
 	import CheckBox from '../lib/components/CheckBox.svelte';
-
 	let searchWord = '';
 	let searchYouTube = false;
 	let searchLyrics = false;
