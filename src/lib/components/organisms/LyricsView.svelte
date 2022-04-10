@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LyricsCard from './LyricsCard.svelte';
+	import LyricsList from './LyricsList.svelte';
 
 	const lyricsList: { song: string; artist: string }[] = [
 		{ song: '曲名1', artist: 'アーティスト1' },
@@ -11,8 +11,6 @@
 	];
 </script>
 
-<div class="flex justify-between">
-	{#each lyricsList as lyric}
-		<LyricsCard song={lyric.song} artist={lyric.artist} />
-	{/each}
+<div class="w-1/2">
+	<LyricsList {lyricsList} />
 </div>

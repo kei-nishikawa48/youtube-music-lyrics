@@ -1,10 +1,10 @@
-import Sentence from './Sentence.svelte';
+import Item from './Item.svelte';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 // More on argTypes: https://storybook.js.org/docs/svelte/api/argtypes
 export default {
-	title: 'molecules/Sentence',
-	component: Sentence,
+	title: 'molecules/Item',
+	component: Item,
 	argTypes: {
 		backgroundColor: { control: 'color' },
 		label: { control: 'text' },
@@ -19,7 +19,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/svelte/writing-stories/introduction#using-args
 const Template = (args) => ({
-	Component: Sentence,
+	Component: Item,
 	props: args,
 	on: {
 		click: args.onClick

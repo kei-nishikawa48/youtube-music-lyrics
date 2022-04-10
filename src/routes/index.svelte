@@ -1,4 +1,6 @@
 <script>
+	import '../styles/tailwind.css';
+
 	import SearchForm from '../lib/components/SearchForm.svelte';
 	import CheckBox from '../lib/components/CheckBox.svelte';
 	let searchWord = '';
@@ -11,7 +13,7 @@
 		console.log(searchLyrics);
 	};
 
-	import LyricsList from '../lib/components/organisms/LyricsList.svelte';
+	import LyricsView from '../lib/components/organisms/LyricsView.svelte';
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -24,5 +26,5 @@
 
 <div class="flex flex-row">
 	<div>youtube</div>
-	<LyricsList />
+	<LyricsView />
 </div>

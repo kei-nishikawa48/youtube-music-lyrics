@@ -1,8 +1,14 @@
 <script lang="ts">
 	export let text: string = '';
-	export let bgColor: string = '#fff';
-	export let textColor: string = '#000';
+	export let bgColor: string = 'bg-transparent';
+	export let textColor: string = 'text-black';
 	export let size: 'small' | 'medium' | 'large' = 'medium';
+
+	const classSize = {
+		small: 'text-xs',
+		medium: 'text-base',
+		large: 'text-lg'
+	};
 </script>
 
-<div class={`${bgColor} ${textColor} ${size}`}>{text}</div>
+<div class={`${bgColor} ${textColor} ${classSize[size]} m-0.5`}>{text}</div>
