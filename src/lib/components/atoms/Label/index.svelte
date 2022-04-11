@@ -7,7 +7,7 @@
 	const classSize = {
 		small: 'text-xs',
 		medium: 'text-base',
-		large: 'text-lg'
+		large: 'text-xl'
 	};
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LyricsCard from './LyricsCard.svelte';
+	import LyricsCard from '$components/organisms/LyricsCard/index.svelte';
 
 	export let lyricsList: { song: string; artist: string }[];
 </script>

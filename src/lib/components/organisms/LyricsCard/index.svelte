@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Item from '../molecules/Item.svelte';
+	import Item from '$components/molecules/Item/index.svelte';
+
 	export let song: string = '';
 	export let artist: string = '';
 	export let borderColor: string = 'border-neutral-500';

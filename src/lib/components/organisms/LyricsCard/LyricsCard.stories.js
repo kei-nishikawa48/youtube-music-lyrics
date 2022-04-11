@@ -1,4 +1,4 @@
-import LyricsCard from './LyricsCard.svelte';
+import LyricsCard from './index.svelte';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 // More on argTypes: https://storybook.js.org/docs/svelte/api/argtypes
@@ -6,14 +6,10 @@ export default {
 	title: 'Organisms/LyricsCard',
 	component: LyricsCard,
 	argTypes: {
-		backgroundColor: { control: 'color' },
-		label: { control: 'text' },
-		onClick: { action: 'onClick' },
-		primary: { control: 'boolean' },
-		size: {
-			control: { type: 'select' },
-			options: ['small', 'medium', 'large']
-		}
+		song: { control: 'text' },
+		artist: { control: 'text' },
+		borderColor: { control: 'text' },
+		bgColor: { control: 'text' }
 	}
 };
 
@@ -29,23 +25,8 @@ const Template = (args) => ({
 // More on args: https://storybook.js.org/docs/svelte/writing-stories/args
 export const Primary = Template.bind({});
 Primary.args = {
-	primary: true,
-	label: 'Button'
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-	label: 'Button'
-};
-
-export const Large = Template.bind({});
-Large.args = {
-	size: 'large',
-	label: 'Button'
-};
-
-export const Small = Template.bind({});
-Small.args = {
-	size: 'small',
-	label: 'Button'
+	song: '曲名',
+	artist: 'アーティスト名',
+	borderColor: 'border-neutral-500',
+	bgColor: 'bg-neutral-200'
 };

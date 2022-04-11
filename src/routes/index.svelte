@@ -13,7 +13,7 @@
 		console.log(searchLyrics);
 	};
 
-	import LyricsView from '../lib/components/organisms/LyricsView.svelte';
+	import LyricsView from '$components/organisms/LyricsView/index.svelte';
 </script>
 
 <h1>Welcome to SvelteKit</h1>

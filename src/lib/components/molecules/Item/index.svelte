@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Label from '../atoms/Label.svelte';
+	import Label from '$components/atoms/Label/index.svelte';
 
 	export let title: string = '';
 	export let content: string = '';

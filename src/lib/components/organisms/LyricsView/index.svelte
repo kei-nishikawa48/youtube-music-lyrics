@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LyricsList from './LyricsList.svelte';
+	import LyricsList from '$components/organisms/LyricsList/index.svelte';
 
 	const lyricsList: { song: string; artist: string }[] = [
 		{ song: '曲名1', artist: 'アーティスト1' },
@@ -11,6 +11,6 @@
 	];
 </script>
 
-<div class="w-1/2">
+<div class="w-full">
 	<LyricsList {lyricsList} />
 </div>
