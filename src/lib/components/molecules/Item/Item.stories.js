@@ -12,17 +12,29 @@ export default {
 			control: { type: 'select' },
 			options: ['row', 'column']
 		},
-		titleBgColor: { control: 'text' },
-		titleTextColor: { control: 'text' },
+		titleBgColor: {
+			control: { type: 'select' },
+			options: ['transparent', 'black', 'gray', 'grayDark', 'grayLight', 'white']
+		},
+		titleTextColor: {
+			control: { type: 'select' },
+			options: ['black', 'gray', 'grayDark', 'grayLight', 'white']
+		},
 		titleSize: {
 			control: { type: 'select' },
-			options: ['bg-small', 'medium', 'large']
+			options: ['small', 'medium', 'large']
 		},
-		contentBgColor: { control: 'text' },
-		contentTextColor: { control: 'text' },
+		contentBgColor: {
+			control: { type: 'select' },
+			options: ['transparent', 'black', 'gray', 'grayDark', 'grayLight', 'white']
+		},
+		contentTextColor: {
+			control: { type: 'select' },
+			options: ['black', 'gray', 'grayDark', 'grayLight', 'white']
+		},
 		contentSize: {
 			control: { type: 'select' },
-			options: ['bg-small', 'medium', 'large']
+			options: ['small', 'medium', 'large']
 		}
 	}
 };
@@ -42,10 +54,10 @@ Primary.args = {
 	title: 'タイトル',
 	content: '内容',
 	direction: 'row',
-	titleBgColor: 'bg-transparent',
-	titleTextColor: 'text-black',
+	titleBgColor: 'transparent',
+	titleTextColor: 'black',
 	titleSize: 'medium',
-	contentBgColoer: 'bg-transparent',
-	contentTextColoer: 'text-black',
+	contentBgColor: 'transparent',
+	contentTextColor: 'black',
 	contentSize: 'medium'
 };

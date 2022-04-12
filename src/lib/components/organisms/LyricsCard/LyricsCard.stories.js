@@ -8,8 +8,14 @@ export default {
 	argTypes: {
 		song: { control: 'text' },
 		artist: { control: 'text' },
-		borderColor: { control: 'text' },
-		bgColor: { control: 'text' }
+		borderColor: {
+			control: { type: 'select' },
+			options: ['transparent', 'black', 'gray', 'grayDark', 'grayLight', 'white']
+		},
+		bgColor: {
+			control: { type: 'select' },
+			options: ['black', 'gray', 'grayDark', 'grayLight', 'white']
+		}
 	}
 };
 
@@ -27,6 +33,6 @@ export const Primary = Template.bind({});
 Primary.args = {
 	song: '曲名',
 	artist: 'アーティスト名',
-	borderColor: 'border-neutral-500',
-	bgColor: 'bg-neutral-200'
+	borderColor: 'gray',
+	bgColor: 'grayLight0'
 };

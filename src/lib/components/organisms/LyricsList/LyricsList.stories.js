@@ -21,7 +21,8 @@ const Template = (args) => ({
 export const Primary = Template.bind({});
 Primary.args = {
 	lyricsList: [
-		{ song: 'song1', lyrics: 'lyrics1' },
-		{ song: 'song2', lyrics: 'lyrics2' }
+		{ song: 'song1', artist: 'artist1' },
+		{ song: 'song2', artist: 'artist2' },
+		{ song: 'song3', artist: 'artist3' }
 	]
 };
