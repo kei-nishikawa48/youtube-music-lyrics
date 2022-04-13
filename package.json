@@ -50,6 +50,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@storybook/addon-svelte-csf": "^1.1.0"
+    "@storybook/addon-svelte-csf": "^1.1.0",
+    "concurrently": "^7.1.0"
   }
 }

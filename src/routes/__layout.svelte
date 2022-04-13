@@ -1,6 +1,13 @@
 <script>
-  import "../app.css";
+  import "../styles/tailwind.css";
+  import SearchForm from "$lib/components/SearchForm.svelte";
 </script>
 
-<slot />
+<div class="search-form">
+  <SearchForm />
+</div>
+
+<div class="search-results">
+  <slot />
+</div>
 
