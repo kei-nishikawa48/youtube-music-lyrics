@@ -34,5 +34,5 @@ Primary.args = {
 	song: '曲名',
 	artist: 'アーティスト名',
 	borderColor: 'gray',
-	bgColor: 'grayLight0'
+	bgColor: 'grayLight'
 };
