@@ -3,11 +3,12 @@
   import SearchForm from "$lib/components/SearchForm.svelte";
 </script>
 
-<div class="search-form">
-  <SearchForm />
-</div>
-
-<div class="search-results">
-  <slot />
-</div>
-
+<main>
+  <div class="search-form flex justify-center">
+    <SearchForm />
+  </div>
+  
+  <div class="search-results flex flex-row">
+    <slot />
+  </div>
+</main>
