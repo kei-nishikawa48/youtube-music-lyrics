@@ -7,17 +7,17 @@ export default {
 	component: Label,
 	argTypes: {
 		text: { control: 'text' },
-		bgColor: {
-			control: { type: 'select' },
-			options: ['transparent', 'black', 'gray', 'grayDark', 'grayLight', 'white']
-		},
 		textColor: {
 			control: { type: 'select' },
-			options: ['black', 'gray', 'grayDark', 'grayLight', 'white']
+			options: ['black', 'gray', 'red', 'blue', 'green']
 		},
 		size: {
 			control: { type: 'select' },
 			options: ['small', 'medium', 'large']
+		},
+		mode: {
+			control: { type: 'select' },
+			options: ['row', 'column_title', 'column_content']
 		}
 	}
 };
@@ -35,7 +35,23 @@ const Template = (args) => ({
 export const Primary = Template.bind({});
 Primary.args = {
 	text: 'ラベル',
-	bgColor: 'transparent',
 	textColor: 'black',
-	size: 'medium'
+	size: 'medium',
+	mode: 'row'
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+	text: 'ラベル',
+	textColor: 'red',
+	size: 'small',
+	mode: 'column_title'
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+	text: 'ラベル',
+	textColor: 'black',
+	size: 'medium',
+	mode: 'column_content'
 };

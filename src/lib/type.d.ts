@@ -1,15 +1,11 @@
 // 共通化できる型を記述しましょう
 
-export type ColorProp = 'black' | 'gray' | 'grayDark' | 'grayLight' | 'white';
+export type ColorProp = 'black' | 'gray' | 'red' | 'blue' | 'green';
 
 export type Color = {
 	black: string;
 	gray: string;
-	grayDark: string;
-	grayLight: string;
-	white: string;
+	red: string;
+	blue: string;
+	green: string;
 };
-
-export type BgColorProp = 'transparent' | ColorProp;
-
-export type BgColor = { transparent: string } | Color;

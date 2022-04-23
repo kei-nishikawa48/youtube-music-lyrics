@@ -8,13 +8,14 @@ export default {
 	argTypes: {
 		song: { control: 'text' },
 		artist: { control: 'text' },
-		borderColor: {
+		primary: { control: 'boolean' },
+		color: {
 			control: { type: 'select' },
-			options: ['transparent', 'black', 'gray', 'grayDark', 'grayLight', 'white']
+			options: ['black', 'gray', 'red', 'blue', 'green']
 		},
-		bgColor: {
+		direction: {
 			control: { type: 'select' },
-			options: ['black', 'gray', 'grayDark', 'grayLight', 'white']
+			options: ['row', 'column']
 		}
 	}
 };
@@ -33,6 +34,16 @@ export const Primary = Template.bind({});
 Primary.args = {
 	song: '曲名',
 	artist: 'アーティスト名',
-	borderColor: 'gray',
-	bgColor: 'grayLight'
+	primary: true,
+	color: 'red',
+	direction: 'row'
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+	song: '曲名',
+	artist: 'アーティスト名',
+	primary: false,
+	color: 'blue',
+	direction: 'column'
 };

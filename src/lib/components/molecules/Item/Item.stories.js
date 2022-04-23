@@ -12,27 +12,11 @@ export default {
 			control: { type: 'select' },
 			options: ['row', 'column']
 		},
-		titleBgColor: {
-			control: { type: 'select' },
-			options: ['transparent', 'black', 'gray', 'grayDark', 'grayLight', 'white']
-		},
 		titleTextColor: {
 			control: { type: 'select' },
-			options: ['black', 'gray', 'grayDark', 'grayLight', 'white']
+			options: ['black', 'gray', 'red', 'blue', 'green']
 		},
 		titleSize: {
-			control: { type: 'select' },
-			options: ['small', 'medium', 'large']
-		},
-		contentBgColor: {
-			control: { type: 'select' },
-			options: ['transparent', 'black', 'gray', 'grayDark', 'grayLight', 'white']
-		},
-		contentTextColor: {
-			control: { type: 'select' },
-			options: ['black', 'gray', 'grayDark', 'grayLight', 'white']
-		},
-		contentSize: {
 			control: { type: 'select' },
 			options: ['small', 'medium', 'large']
 		}
@@ -54,10 +38,15 @@ Primary.args = {
 	title: 'タイトル',
 	content: '内容',
 	direction: 'row',
-	titleBgColor: 'transparent',
-	titleTextColor: 'black',
-	titleSize: 'medium',
-	contentBgColor: 'transparent',
-	contentTextColor: 'black',
-	contentSize: 'medium'
+	titleTextColor: 'red',
+	titleSize: 'small'
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+	title: 'タイトル',
+	content: '内容',
+	direction: 'column',
+	titleTextColor: 'blue',
+	titleSize: 'small'
 };
