@@ -8,17 +8,16 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
-	},
-	vite: {
-		resolve: {
-			alias: {
-				$lib: path.resolve('./src/lib'),
-				$components: path.resolve('./src/lib/components')
+		adapter: adapter(),
+		vite: {
+			resolve: {
+				alias: {
+					$lib: path.resolve('./src/lib'),
+					$components: path.resolve('./src/lib/components')
+				}
 			}
 		}
-	},
-
+	}
 };
 
 export default config;
