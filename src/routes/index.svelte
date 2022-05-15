@@ -1,30 +1,12 @@
 <script>
 	import '../styles/tailwind.css';
-
-	import SearchForm from '../lib/components/SearchForm.svelte';
-	import CheckBox from '../lib/components/CheckBox.svelte';
-	let searchWord = '';
-	let searchYouTube = false;
-	let searchLyrics = false;
-
-	const handleSubmit = () => {
-		console.log(searchWord);
-		console.log(searchYouTube);
-		console.log(searchLyrics);
-	};
-
 	import LyricsView from '$components/organisms/LyricsView/index.svelte';
 </script>
 
-<h1>Welcome to SvelteKit</h1>
+<div class="youtube flex justify-center w-1/2 my-10 ml-10 mr-5">
+    <!-- Youtubeコンポーネント入れる -->
+</div>
 
-<form on:submit|preventDefault={handleSubmit}>
-	<SearchForm bind:value={searchWord} />
-	<CheckBox bind:checked={searchYouTube} />YouTube
-	<CheckBox bind:checked={searchLyrics} />歌詞検索
-</form>
-
-<div class="flex flex-row">
-	<div>youtube</div>
+<div class="lyrics flex justify-center w-1/2 my-10 ml-5 mr-10">
 	<LyricsView />
 </div>
