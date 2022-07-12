@@ -51,6 +51,7 @@
 	<button on:click={handleYoutubePost}>youtube post</button>
 	<br />
 
+	歌詞検索テスト<br />
 	<input class="border-2" type="text" bind:value={inputValue} /><br />
 	<button class="border-2" on:click={handleLyricsListSearch}>lyricsListSearch</button>
 	<button class="border-2" on:click={handleLyricsSearch}>lyricsSearch</button>

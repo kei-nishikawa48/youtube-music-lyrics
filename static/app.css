@@ -509,11 +509,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between {
 	justify-content: space-between;
 }
-.border {
-	border-width: 1px;
-}
 .border-2 {
 	border-width: 2px;
+}
+.border {
+	border-width: 1px;
 }
 .border-slate-400 {
 	--tw-border-opacity: 1;
