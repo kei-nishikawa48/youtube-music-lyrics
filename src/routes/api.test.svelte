@@ -1,8 +1,8 @@
 <script lang="ts">
-	let aaaa: string = 'aaaa';
+	import '../styles/tailwind.css';
 
 	async function handleYoutubeGet(): Promise<void> {
-		const res = await fetch(`./api/youtubeSearch-あいう　えお?aaaa=tsssest&bbb=tttaaat`);
+		const res = await fetch(`./api/youtubeSearch-あいう えお?aaaa=tsssest&bbb=tttaaat`);
 		const data = await res.json();
 		console.log(data);
 	}
@@ -19,24 +19,40 @@
 		console.log(data);
 	}
 
-	async function handleLyricsGet(): Promise<void> {
-		const res = await fetch(`./api/lyricsSearch-か　きくけ`);
-		const data = await res.json();
-		console.log(data);
+	let inputValue: string;
+	let lyrics_url: string;
+	async function handleLyricsListSearch(): Promise<void> {
+		if (inputValue) {
+			const res = await fetch(`./api/lyricsListSearch-${inputValue}`);
+			const data = await res.json();
+			console.log(data);
+			lyrics_url = data.result[0].lyrics_url;
+		} else {
+			alert('inputText is empty');
+		}
 	}
 
-	async function handlelyricsSearchPost(): Promise<void> {
-		const res = await fetch(`./api/lyricsSearch-か　きくけ`, {
-			method: 'POST'
-		});
-		const data = await res.json();
-		console.log(data);
+	async function handleLyricsSearch(): Promise<void> {
+		if (lyrics_url) {
+			const res = await fetch(`./api/lyricsSearch`, {
+				method: 'POST',
+				body: JSON.stringify({ url: lyrics_url })
+			});
+			const data = await res.json();
+			console.log(data);
+		} else {
+			alert('lyrics_url is empty');
+		}
 	}
 </script>
 
-<button on:click={handleYoutubeGet}>youtube get</button>
-<button on:click={handleYoutubePost}>youtube post</button>
-<br />
+<div class="flex flex-col justify-between">
+	<button on:click={handleYoutubeGet}>youtube get</button>
+	<button on:click={handleYoutubePost}>youtube post</button>
+	<br />
 
-<button on:click={handleLyricsGet}>lyrics get</button>
-<button on:click={handlelyricsSearchPost}>lyrics post</button>
+	歌詞検索テスト<br />
+	<input class="border-2" type="text" bind:value={inputValue} /><br />
+	<button class="border-2" on:click={handleLyricsListSearch}>lyricsListSearch</button>
+	<button class="border-2" on:click={handleLyricsSearch}>lyricsSearch</button>
+</div>
