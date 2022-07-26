@@ -66,7 +66,6 @@
 		"@storybook/addon-svelte-csf": "^1.1.0",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.0.1",
-		"jsdom": "^20.0.0",
-		"canvas": "file:./src/functions/canvas"
+		"jsdom": "^20.0.0"
 	}
 }

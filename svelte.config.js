@@ -18,7 +18,8 @@ const config = {
 			resolve: {
 				alias: {
 					$lib: path.resolve('./src/lib'),
-					$components: path.resolve('./src/lib/components')
+					$components: path.resolve('./src/lib/components'),
+					canvas: false
 				}
 			}
 		}
