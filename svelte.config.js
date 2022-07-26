@@ -9,10 +9,7 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: preprocess({
-		replace: [
-			['process.env.LYRICS_API_KEY', JSON.stringify(process.env.LYRICS_API_KEY)],
-			['canvas', '{}']
-		]
+		replace: [['process.env.LYRICS_API_KEY', JSON.stringify(process.env.LYRICS_API_KEY)]]
 	}),
 
 	kit: {
