@@ -24,9 +24,9 @@
 	async function handleLyricsListSearch(): Promise<void> {
 		if (inputValue) {
 			const res = await fetch(`./api/lyricsListSearch-${inputValue}`);
-			const data = await res.json();
+			const data = await res.text();
 			console.log(data);
-			lyrics_url = data.result[0].lyrics_url;
+			// lyrics_url = data.result[0].lyrics_url;
 		} else {
 			alert('inputText is empty');
 		}
