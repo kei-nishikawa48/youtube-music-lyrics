@@ -2,9 +2,9 @@
 export async function get({ params }) {
 	const genius_search_url = `http://api.genius.com/search?q=${params.query}&access_token=${process.env.LYRICS_API_KEY}`;
 	const response = await fetch(genius_search_url);
-	const response_json = await response.json();
+	// const response_json = await response.json();
 
-	return { body: { status: '200', resoult: response_json } };
+	return { body: { status: '200', result: await response.text() } };
 	// console.log(response, response_json);
 
 	// const result = response_json.response.hits.map((el) => ({
