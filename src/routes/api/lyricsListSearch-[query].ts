@@ -4,6 +4,8 @@ export async function get({ params }) {
 	const response = await fetch(genius_search_url);
 	const response_json = await response.json();
 
+	console.log(response_json);
+
 	const result = response_json.response.hits.map((el) => ({
 		artist: el.result.artist_names,
 		artist_id: el.result.primary_artist.id,
