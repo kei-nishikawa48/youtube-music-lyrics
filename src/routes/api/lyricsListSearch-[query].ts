@@ -6,15 +6,35 @@ export async function get({ params }) {
 
 	console.log(response, response_json);
 
-	const result = response_json.response.hits.map((el) => ({
-		artist: el.result.artist_names,
-		artist_id: el.result.primary_artist.id,
-		title: el.result.title,
-		lyrics_url: el.result.url,
-		song_art_image_url: el.result.song_art_image_url
-	}));
+	if (response_json.response.hits.length === 0) {
+		return {
+			status: 404,
+			body: {
+				message: 'Not Found'
+			}
+		};
+	}
+
+	const result = response_json.response.hits.map(
+		(song: {
+			result: {
+				artist_names: string;
+				primary_artist: { id: string };
+				title: string;
+				url: string;
+				song_art_image_url: string;
+			};
+		}) => ({
+			artist: song.result.artist_names,
+			artist_id: song.result.primary_artist.id,
+			title: song.result.title,
+			lyrics_url: song.result.url,
+			song_art_image_url: song.result.song_art_image_url
+		})
+	);
 
 	return {
-		body: { status: '200', result: result }
+		status: '200',
+		body: { result: result }
 	};
 }

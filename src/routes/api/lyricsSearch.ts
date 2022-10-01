@@ -5,8 +5,8 @@ import { load } from 'cheerio';
  * @param request(Json): {url: lyrics_url}
  */
 export async function post({ request }) {
-	const body = await request.json();
-	const lyrics_url = body.url;
+	const requestJson = await request.json();
+	const lyrics_url = requestJson.url;
 
 	const lyrics_response = await fetch(lyrics_url);
 
@@ -20,12 +20,17 @@ export async function post({ request }) {
 					.html()
 					.replace(/<br>/g, '\n')
 					.replace(/<(?!\s*br\s*\/?)[^>]+>/gi, '');
-				lyricsHTML += $('<textarea/>').html(snippet).text().trim() + '\n\n';
+				lyricsHTML += snippet.trim() + '\n\n';
 			}
 		});
 	}
 
+	// アーティスト
+
 	return {
-		body: { status: '200', lyricsHTML }
+		status: '200',
+		body: {
+			lyricsHTML
+		}
 	};
 }

@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../styles/tailwind.css';
 
+	let lyricsHTML = '';
+
 	async function handleYoutubeGet(): Promise<void> {
 		const res = await fetch(`./api/youtubeSearch-あいう えお?aaaa=tsssest&bbb=tttaaat`);
 		const data = await res.json();
@@ -38,8 +40,9 @@
 				method: 'POST',
 				body: JSON.stringify({ url: lyrics_url })
 			});
-			const data = await res.json();
-			console.log(data);
+			const lyricData = await res.json();
+			console.log(lyricData);
+			lyricsHTML = lyricData.lyricsHTML;
 		} else {
 			alert('lyrics_url is empty');
 		}
@@ -55,4 +58,8 @@
 	<input class="border-2" type="text" bind:value={inputValue} /><br />
 	<button class="border-2" on:click={handleLyricsListSearch}>lyricsListSearch</button>
 	<button class="border-2" on:click={handleLyricsSearch}>lyricsSearch</button>
+
+	<div>
+		<pre>{lyricsHTML}</pre>
+	</div>
 </div>
